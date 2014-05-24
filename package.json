@@ -1,22 +1,23 @@
 {
-  "name": "generator-ember",
-  "version": "0.8.3",
-  "description": "Yeoman generator for Ember",
+  "name": "generator-ember-plus",
+  "version": "0.0.1",
+  "description": "Yeoman generator for Ember with added functionality",
   "keywords": [
     "yeoman-generator",
     "scaffold",
     "generator",
     "framework",
     "mvc",
-    "ember"
+    "ember",
+    "plus"
   ],
-  "homepage": "https://github.com/yeoman/generator-ember",
-  "bugs": "https://github.com/yeoman/generator-ember/issues",
-  "author": "The Yeoman Team",
+  "homepage": "https://github.com/kfir124/generator-ember-plus",
+  "bugs": "https://github.com/kfir124/generator-ember-plus/issues",
+  "author": "kfir124",
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/yeoman/generator-ember.git"
+    "url": "git://github.com/kfir124/generator-ember-plus.git"
   },
   "scripts": {
     "test": "mocha --reporter spec"
