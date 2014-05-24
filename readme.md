@@ -1,4 +1,4 @@
-# Ember.js Generator Plus
+# Ember.js Generator Plus!
 
 Maintainer: [kfir124](https://github.com/kfir124)
 
