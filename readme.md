@@ -9,7 +9,7 @@ which aims to give the same functionality as the main emberjs-generator but incl
 * Bootstrap-sass
 * [Bootstrap-for-ember] (https://github.com/ember-addons/bootstrap-for-ember)
 * Latest Ember version!(1.5.0 + ember data 1.0.0 beta 7)
-![ScreenShot](https://raw.github.com/yeoman/generator-ember/master/project/img/screenshots/2013_07_17.png)
+![ScreenShot](https://raw.github.com/yeoman/generator-ember-plus/master/project/img/screenshots/2014_05_26.png)
 
 ## License
 
