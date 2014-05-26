@@ -4,6 +4,7 @@
   "description": "Yeoman generator for Ember with added functionality",
   "keywords": [
     "yeoman-generator",
+    "yeoman-generator-plus",
     "scaffold",
     "generator",
     "framework",
