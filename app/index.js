@@ -53,15 +53,10 @@ EmberGenerator.prototype.welcome = function welcome() {
 EmberGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
-  var prompts = [{
-    type: 'confirm',
-    name: 'compassBootstrap',
-    message: 'Would you like to include Bootstrap for Sass?',
-    default: true
-  }];
+  var prompts = []; // no questions asked! install all needed cool stuff!
 
   this.prompt(prompts, function (props) {
-    this.compassBootstrap = props.compassBootstrap;
+    this.compassBootstrap = true;
 
     cb();
   }.bind(this));
@@ -129,6 +124,7 @@ EmberGenerator.prototype.writeIndex = function writeIndex() {
     mainCssFiles.push('styles/normalize.css');
     mainCssFiles.push('styles/style.css');
   }
+  mainCssFiles.push('styles/bs-growl-notifications.css');
 
   this.indexFile = this.appendStyles(this.indexFile, 'styles/main.css', mainCssFiles);
 
@@ -144,18 +140,20 @@ EmberGenerator.prototype.bootstrapJavaScript = function bootstrapJavaScript() {
   }
   // Wire Bootstrap plugins
   this.indexFile = this.appendScripts(this.indexFile, 'scripts/plugins.js', [
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js',
-    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js'
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-core.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-alert.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-badge.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-basic.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-button.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-growl-notifications.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-items-action-bar.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-label.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-list-group.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-modal.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-nav.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-notifications.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-progressbar.max.js',
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-wizard.max.js'
   ], null, 'app');
 };
 
@@ -168,6 +166,7 @@ EmberGenerator.prototype.all = function all() {
     this.copy('styles/normalize.css', 'app/styles/normalize.css');
     this.copy('styles/style.css', 'app/styles/style.css');
   }
+  this.copy('styles/bs-growl-notifications.css', 'app/styles/bs-growl-notifications.css');
 
   this.copy(this._getJSPath('scripts/app'), this._getJSPath('app/scripts/app'));
   this.copy(this._getJSPath('scripts/store'), this._getJSPath('app/scripts/store'));
