@@ -138,8 +138,8 @@ EmberGenerator.prototype.bootstrapJavaScript = function bootstrapJavaScript() {
   if (!this.compassBootstrap) {
     return;  // Skip if disabled.
   }
-  // Wire Bootstrap plugins
-  this.indexFile = this.appendScripts(this.indexFile, 'scripts/plugins.js', [
+  // Wire Bootstrap plugins //it should be appendScripts but its bugged in yeoman-generator 0.16.0
+  this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/plugins.js', [
     'bower_components/ember-addons.bs_for_ember/dist/js/bs-core.max.js',
     'bower_components/ember-addons.bs_for_ember/dist/js/bs-alert.max.js',
     'bower_components/ember-addons.bs_for_ember/dist/js/bs-badge.max.js',
