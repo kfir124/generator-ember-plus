@@ -1,5 +1,8 @@
 ## History
 
+### 1.0.3 (2014-05-27)
+* Fix minor bug for some people
+
 ### 1.0.2 (2014-05-27)
 * Fixed bs-for-ember
 * finally stable :)
