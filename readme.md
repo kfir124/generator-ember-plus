@@ -102,7 +102,7 @@ Which can be used in the application with `{{x-player}}`.
 
   Defaults to `mocha`. Can be switched for another supported testing framework like `jasmine`.
 
-* `--coffee`
+* `--coffee` **(NOTE: not fully supported yet)** 
 
   Enable support for CoffeeScript.
 
