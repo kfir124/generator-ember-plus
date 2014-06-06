@@ -1,4 +1,7 @@
 ## History
+### 1.0.6 (2014-06-06)
+* Fix critical typo which caused a bug
+
 ### 1.0.5 (2014-06-06)
 * Changing templates
 * Cleaning up the App route
