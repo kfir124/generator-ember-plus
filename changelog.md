@@ -1,11 +1,12 @@
 ## History
+### 1.0.4 (2014-06-06)
+* Update ember to 1.5.1
 
 ### 1.0.3 (2014-05-27)
 * Fix minor bug for some people
 
 ### 1.0.2 (2014-05-27)
 * Fixed bs-for-ember
-* finally stable :)
 
 ### 1.0.1 (2014-05-27)
 * Fixed fonts location
