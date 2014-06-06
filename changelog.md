@@ -1,4 +1,7 @@
 ## History
+### 1.0.5 (2014-06-06)
+* Changing templates
+
 ### 1.0.4 (2014-06-06)
 * Update ember to 1.5.1
 
