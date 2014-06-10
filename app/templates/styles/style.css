@@ -1,4 +1,19 @@
 /* Put your CSS here */
-html, body {
-    margin: 30px 0;
+// Fix for desktops so the navbar fixed top won't overlay
+body {
+  padding-top: 70px;
+}
+// Fix mobiles view (fixed navbar will overlay without it)
+@media (max-width: 767px) {
+  .navbar-fixed-top {
+    position: relative;
+    top: auto;
+  }
+  .navbar-collapse {
+    max-height: none;
+  }
+  body {
+    margin: 0;
+    padding-top: 0;
+  }
 }
