@@ -131,7 +131,7 @@ EmberGenerator.prototype.writeIndex = function writeIndex() {
   this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/components.js', this.bowerScripts, null, 'app');
 
   this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/templates.js', ['scripts/compiled-templates.js'], null, '.tmp');
-  this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/main.js', ['scripts/combined-scripts.js'], null, '.tmp');
+  this.indexFile = this.appendFiles(this.indexFile, 'js', 'scripts/main.js', ['bower_components/ember-simple-auth/ember-simple-auth.js', 'scripts/combined-scripts.js'], null, '.tmp');
 };
 
 EmberGenerator.prototype.bootstrapJavaScript = function bootstrapJavaScript() {
