@@ -153,7 +153,8 @@ EmberGenerator.prototype.bootstrapJavaScript = function bootstrapJavaScript() {
     'bower_components/ember-addons.bs_for_ember/dist/js/bs-nav.max.js',
     'bower_components/ember-addons.bs_for_ember/dist/js/bs-notifications.max.js',
     'bower_components/ember-addons.bs_for_ember/dist/js/bs-progressbar.max.js',
-    'bower_components/ember-addons.bs_for_ember/dist/js/bs-wizard.max.js'
+    'bower_components/ember-addons.bs_for_ember/dist/js/bs-wizard.max.js',
+    'bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js'
   ], null, 'app');
 };
 

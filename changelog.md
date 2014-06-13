@@ -1,4 +1,9 @@
 ## History
+### 1.0.7 (2014-06-13)
+* Fixing bootstrap in small screens
+* Adding Ember-simple-auth
+* Fixing bs-for-ember panel collapse bug
+
 ### 1.0.6 (2014-06-06)
 * Fix critical typo which caused a bug
 
