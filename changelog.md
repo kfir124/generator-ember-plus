@@ -1,4 +1,7 @@
 ## History
+### 1.1.1 (2014-06-13)
+* Small fix to the app template
+
 ### 1.1.0 (2014-06-13)
 * Changing readme
 
