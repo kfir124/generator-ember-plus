@@ -1,4 +1,7 @@
 ## History
+### 1.1.0 (2014-06-13)
+* Changing readme
+
 ### 1.0.8 (2014-06-13)
 * Ember-simple-auth working out of the box!
 
