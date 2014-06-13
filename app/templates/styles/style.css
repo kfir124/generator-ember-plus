@@ -17,3 +17,10 @@ body {
     padding-top: 0;
   }
 }
+
+.welcome-text {
+  font-family: 'Cookie', cursive;
+  font-size: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+}

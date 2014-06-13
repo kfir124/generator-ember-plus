@@ -1,4 +1,7 @@
 ## History
+### 1.0.8 (2014-06-13)
+* Ember-simple-auth working out of the box!
+
 ### 1.0.7 (2014-06-13)
 * Fixing bootstrap in small screens
 * Adding Ember-simple-auth

@@ -173,6 +173,7 @@ EmberGenerator.prototype.all = function all() {
   this.copy(this._getJSPath('scripts/store'), this._getJSPath('app/scripts/store'));
   this.copy(this._getJSPath('scripts/router'), this._getJSPath('app/scripts/router'));
   this.copy(this._getJSPath('scripts/routes/application_route'), this._getJSPath('app/scripts/routes/application_route'));
+  this.copy(this._getJSPath('scripts/controllers/application_controller'), this._getJSPath('app/scripts/controllers/application_controller'));
 };
 
 EmberGenerator.prototype.install = function () {
