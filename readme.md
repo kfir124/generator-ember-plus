@@ -5,6 +5,7 @@ Maintainer: [kfir124](https://github.com/kfir124)
 The Ember.js generator plus is a fork of the [emberjs-generator] (https://github.com/yeoman/generator-ember)
 which aims to give the same functionality as the main emberjs-generator but includes the following Plus features:
 * No questions asked! installs all the latest technologies without bothering you with questions
+* [Ember-simple-auth] (https://github.com/simplabs/ember-simple-auth) full integration working out of the box!
 * FontAwesome 4
 * Bootstrap-sass
 * [Bootstrap-for-ember] (https://github.com/ember-addons/bootstrap-for-ember)
