@@ -68,6 +68,7 @@ EmberGenerator.prototype.createDirLayout = function createDirLayout() {
   this.mkdir('app/images');
   this.mkdir('app/scripts');
   this.mkdir('app/scripts/models');
+  this.mkdir('app/scripts/components');
   this.mkdir('app/scripts/controllers');
   this.mkdir('app/scripts/routes');
   this.mkdir('app/scripts/views');

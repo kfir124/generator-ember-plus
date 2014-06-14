@@ -1,4 +1,8 @@
 ## History
+### 1.1.2 (2014-06-14)
+* Fix typo in app template
+* Add components folder
+
 ### 1.1.1 (2014-06-13)
 * Small fix to the app template
 
