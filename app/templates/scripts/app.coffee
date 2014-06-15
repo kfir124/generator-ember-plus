@@ -55,6 +55,7 @@ Ember.Application.initializer
 
 # Order and include as you please.
 require 'scripts/controllers/*'
+require 'scripts/transforms'
 require 'scripts/store'
 require 'scripts/models/*'
 require 'scripts/routes/*'
