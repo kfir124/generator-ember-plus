@@ -1,9 +1,4 @@
 ## History
-### 1.1.3 (2014-06-15)
-* Adding resolutions 
-* Adding Fixture fix
-* Adding **embedded, array, array-string, array-number** Transforms! nosql backend is possible now
-
 ### 1.1.2 (2014-06-14)
 * Fix typo in app template
 * Add components folder
