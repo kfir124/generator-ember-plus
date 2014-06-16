@@ -9,8 +9,6 @@ which aims to give the same functionality as the main emberjs-generator but incl
 * FontAwesome 4
 * Bootstrap-sass
 * [Bootstrap-for-ember] (https://github.com/ember-addons/bootstrap-for-ember)
-* [Fixture Serializer fix] (https://github.com/emberjs/data/issues/1333)
-* Builtin Transforms for **embedded**, **array**, **array-string**, **array-number** so you can use nosql backend easily if needed
 * Latest Ember version!(1.5.1 + ember data 1.0.0 beta 7)
 ![ScreenShot](https://raw.github.com/kfir124/generator-ember-plus/master/project/img/screenshots/2014_06_06.png)
 
