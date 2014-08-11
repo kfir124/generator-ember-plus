@@ -9,7 +9,7 @@ which aims to give the same functionality as the main emberjs-generator but incl
 * FontAwesome 4
 * Bootstrap-sass
 * [Bootstrap-for-ember] (https://github.com/ember-addons/bootstrap-for-ember)
-* Latest Ember version!(1.5.1 + ember data 1.0.0 beta 7)
+* Latest Ember version!(1.6.1)
 ![ScreenShot](https://raw.github.com/kfir124/generator-ember-plus/master/project/img/screenshots/2014_06_06.png)
 
 ## Pre-reqs
@@ -17,6 +17,7 @@ which aims to give the same functionality as the main emberjs-generator but incl
 * [npm](http://nodejs.org/)
 * [compass](http://compass-style.org/install/)
 * `npm install -g grunt-contrib-compass`
+* Bower ( which requires git installed )
 * Ruby
 * gem install compass
 
