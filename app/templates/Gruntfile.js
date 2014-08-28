@@ -44,7 +44,7 @@ module.exports = function (grunt) {
                 tasks: ['compass:server']
             },<% } %>
             neuter: {<% if (!options.coffee) { %>
-                files: ['<%%= yeoman.app %>/scripts/{,*/}*.js'],<% }else{ %>
+                files: ['<%%= yeoman.app %>/scripts/{,*/}{,*/}*.js'],<% }else{ %>
                 files: ['.tmp/scripts/{,*/}*.js',
                         '!.tmp/scripts/combined-scripts.js'],<% } %>
                 tasks: ['neuter']
