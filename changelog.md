@@ -1,4 +1,8 @@
 ## History
+### 1.1.9 (2014-09-28)
+* Fix ProtectedRoute
+* Update 3rd side libraries 
+
 ### 1.1.2 (2014-06-14)
 * Fix typo in app template
 * Add components folder
