@@ -5,6 +5,12 @@
 
 # Can extend later in order to make protected routes
 <%= _.classify(appname) %>.ProtectedRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin)
+<%= _.classify(appname) %>.ProtectedRoute.reopen beforeModel: (transition) ->
+  unless @get("session.isAuthenticated")
+    transition.abort()
+    @transitionTo "index"
+  return
+
 CustomAuthenticator = Ember.SimpleAuth.Authenticators.Base.extend(
   tokenEndpoint: "/api/token"
   restore: (data) ->
