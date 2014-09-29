@@ -1,4 +1,7 @@
 ## History
+### 1.1.9 (2014-09-29)
+* Better user_level control for protected routes
+
 ### 1.1.8 (2014-09-28)
 * Fix ProtectedRoute
 * Update 3rd side libraries 
