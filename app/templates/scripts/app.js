@@ -6,10 +6,26 @@ var <%= _.classify(appname) %> = window.<%= _.classify(appname) %> = Ember.Appli
 // Can extend later in order to make protected routes
 <%= _.classify(appname) %>.ProtectedRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin);
 <%= _.classify(appname) %>.ProtectedRoute.reopen({
+    fail_route: function(transition) {
+        transition.abort();
+        this.transitionTo('index');
+    },
+
+    needed_level: 0,
+
     beforeModel: function(transition) {
         if (!this.get('session.isAuthenticated')) {
-            transition.abort();
-            this.transitionTo('index');
+            this.fail_route(transition);
+            Bootstrap.GNM.push('Login is needed', 'Please login', 'danger');
+        } else {
+            // user is logged in, maybe we should check his lvl
+            if (this.get('needed_level')) {
+                var needed_level = this.get('needed_level');
+                if (this.get('session.user_level') < needed_level) {
+                    this.fail_route(transition);
+                    Bootstrap.GNM.push('Access denied', 'You are not allowed in here', 'danger');
+                }
+            }
         }
     }
 });
