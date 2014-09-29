@@ -5,11 +5,27 @@
 
 # Can extend later in order to make protected routes
 <%= _.classify(appname) %>.ProtectedRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin)
-<%= _.classify(appname) %>.ProtectedRoute.reopen beforeModel: (transition) ->
-  unless @get("session.isAuthenticated")
+<%= _.classify(appname) %>.ProtectedRoute.reopen
+  fail_route: (transition) ->
     transition.abort()
     @transitionTo "index"
-  return
+    return
+
+  needed_level: 0
+  beforeModel: (transition) ->
+    unless @get("session.isAuthenticated")
+      @fail_route transition
+      Bootstrap.GNM.push "Login is needed", "Please login", "danger"
+    else
+      
+      # user is logged in, maybe we should check his lvl
+      if @get("needed_level")
+        needed_level = @get("needed_level")
+        if @get("session.user_level") < needed_level
+          @fail_route transition
+          Bootstrap.GNM.push "Access denied", "You are not allowed in here", "danger"
+    return
+
 
 CustomAuthenticator = Ember.SimpleAuth.Authenticators.Base.extend(
   tokenEndpoint: "/api/token"
