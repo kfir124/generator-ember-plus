@@ -9,7 +9,7 @@ which aims to give the same functionality as the main emberjs-generator but incl
 * FontAwesome 4
 * Bootstrap-sass
 * [Bootstrap-for-ember] (https://github.com/ember-addons/bootstrap-for-ember)
-* Latest Ember version!(1.6.1)
+* Latest Ember version!(1.8.1)
 ![ScreenShot](https://raw.github.com/kfir124/generator-ember-plus/master/project/img/screenshots/2014_06_06.png)
 
 ## Pre-reqs
