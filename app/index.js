@@ -126,7 +126,6 @@ EmberGenerator.prototype.writeIndex = function writeIndex() {
     mainCssFiles.push('styles/normalize.css');
     mainCssFiles.push('styles/style.css');
   }
-  mainCssFiles.push('styles/bs-growl-notifications.css');
 
   this.indexFile = this.appendStyles(this.indexFile, 'styles/main.css', mainCssFiles);
 
