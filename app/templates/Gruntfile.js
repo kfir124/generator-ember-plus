@@ -176,7 +176,8 @@ module.exports = function (grunt) {
                 httpImagesPath: '/images',
                 httpGeneratedImagesPath: '/images/generated',
                 httpFontsPath: '/styles/fonts',
-                relativeAssets: false
+                relativeAssets: false,
+                require: 'sass-css-importer'
             },
             dist: {},
             server: {
@@ -430,13 +431,13 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'replace:dist',
+        'copy',
         'useminPrepare',
         'concurrent:dist',
         'neuter:app',
         'concat',
         'cssmin',
         'uglify',
-        'copy',
         'usemin'
     ]);
 
