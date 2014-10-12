@@ -1,2 +1,2 @@
-App.<%= componetized_name %>Component = Ember.Component.extend({
+<%= _.classify(appname) %>.<%= componetized_name %>Component = Ember.Component.extend({
 });

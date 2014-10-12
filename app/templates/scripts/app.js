@@ -1,8 +1,11 @@
-var App = <%= _.classify(appname) %> = window.<%= _.classify(appname) %> = Ember.Application.create();
+var <%= _.classify(appname) %> = window.<%= _.classify(appname) %> = Ember.Application.create();
+
+// Ember-simple-auth [this example is just for playing around with simple-auth while locally testing your app
+// login with kfi124 password 1234 in order to authenticate
 
 // Can extend later in order to make protected routes
-App.ProtectedRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin);
-App.ProtectedRoute.reopen({
+<%= _.classify(appname) %>.ProtectedRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin);
+<%= _.classify(appname) %>.ProtectedRoute.reopen({
     fail_route: function(transition) {
         transition.abort();
         this.transitionTo('index');
@@ -39,9 +42,7 @@ var CustomAuthenticator = Ember.SimpleAuth.Authenticators.Base.extend({
             }
         });
     },
-    
-    // Ember-simple-auth [this example is just for playing around with simple-auth while locally testing your app
-    // login with kfi124 password 1234 in order to authenticate
+
     authenticate: function(credentials) {
         return new Ember.RSVP.Promise(function(resolve, reject) {
             if (credentials.username === 'kfir124' && credentials.password === '1234') {

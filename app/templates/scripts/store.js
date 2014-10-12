@@ -1,1 +1,1 @@
-App.ApplicationAdapter = DS.FixtureAdapter;
+<%= _.classify(appname) %>.ApplicationAdapter = DS.FixtureAdapter;

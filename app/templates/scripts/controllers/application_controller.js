@@ -1,4 +1,4 @@
-App.ApplicationController = Ember.Controller.extend({
+<%= _.classify(appname) %>.ApplicationController = Ember.Controller.extend({
     loginModalButtons: [
         Ember.Object.create({title: 'Submit', clicked:"loginModalSubmit"}),
         Ember.Object.create({title: 'Cancel', clicked:"cancel", dismiss: 'modal'})
