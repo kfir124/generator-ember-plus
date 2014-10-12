@@ -1,1 +1,1 @@
-<%= _.classify(appname) %>.ApplicationAdapter = DS.FixtureAdapter
+App.ApplicationAdapter = DS.FixtureAdapter

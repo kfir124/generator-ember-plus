@@ -1,5 +1,5 @@
-<%= _.classify(appname) %>.ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin)
-<%= _.classify(appname) %>.ApplicationRoute.reopen actions:
+App.ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin)
+App.ApplicationRoute.reopen actions:
   authenticateSession: ->
     
     # Call the login method that shows the loginModal
