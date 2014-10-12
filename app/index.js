@@ -169,7 +169,6 @@ EmberGenerator.prototype.all = function all() {
     this.copy('styles/normalize.css', 'app/styles/normalize.css');
     this.copy('styles/style.css', 'app/styles/style.css');
   }
-  this.copy('styles/bs-growl-notifications.css', 'app/styles/bs-growl-notifications.css');
 
   this.copy(this._getJSPath('scripts/app'), this._getJSPath('app/scripts/app'));
   this.copy(this._getJSPath('scripts/store'), this._getJSPath('app/scripts/store'));
