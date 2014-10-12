@@ -1,4 +1,8 @@
 ## History
+### 1.2.1 (2014-10-13)
+* Small gruntfile fix
+* Improve app.js functionality
+
 ### 1.1.9 (2014-09-29)
 * Better user_level control for protected routes
 
