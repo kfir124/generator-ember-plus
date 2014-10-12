@@ -20,6 +20,7 @@ which aims to give the same functionality as the main emberjs-generator but incl
 * Bower ( which requires git installed )
 * Ruby
 * gem install compass
+* gem install --pre sass-css-importer
 
 You should have one path each for:
 
