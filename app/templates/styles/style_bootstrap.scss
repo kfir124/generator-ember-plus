@@ -3,6 +3,13 @@ $fa-font-path: $icon-font-path;
 
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 @import "font-awesome/scss/font-awesome";
+// the css importer doesnt understand sass-path so we need to relative show it the way
+@import "CSS:../bower_components/ember-addons.bs_for_ember/app/styles/components/growl-notifications";
+
+// the hover effects (from hover.css [google it])
+@import "hovereffects";
+// the stamp link style (for the stamplink component)
+@import "stamplink";
 
 /* Put your CSS here */
 html, body {

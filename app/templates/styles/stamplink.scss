@@ -1,0 +1,43 @@
+@import "hovereffects";
+
+$stamp-width: 110px;
+$stamp-height: $stamp-width;
+$font-size: $stamp-height / 2;
+$fa-top: ($stamp-height - $font-size) / 2;
+$fa-color: white;
+
+.stamp-link {
+  @extend .grow;
+  width: $stamp-width;
+  height: $stamp-height;
+  background-color: deepskyblue;
+  display: inline-block;
+  border-radius: $stamp-width / 2;
+  cursor: pointer;
+  .fa {
+    color: $fa-color;
+    font-size: $font-size;
+    top: $fa-top;
+    position: relative;
+  }
+  .text {
+    top: $fa-top;
+    color: white;
+    font-weight: bold;
+    position: relative;
+  }
+}
+
+.stamp9 {
+  background-color: gray;
+  .text {
+    color: white;
+  }
+}
+
+.stamp2 {
+  background-color: forestgreen;
+  .text {
+    color: white;
+  }
+}

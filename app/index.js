@@ -165,6 +165,8 @@ EmberGenerator.prototype.all = function all() {
 
   if (this.compassBootstrap) {
     this.copy('styles/style_bootstrap.scss', 'app/styles/style.scss');
+    this.copy('styles/stamplink.scss', 'app/styles/stamplink.scss');
+    this.copy('styles/hovereffects.scss', 'app/styles/hovereffects.scss');
   } else {
     this.copy('styles/normalize.css', 'app/styles/normalize.css');
     this.copy('styles/style.css', 'app/styles/style.css');
