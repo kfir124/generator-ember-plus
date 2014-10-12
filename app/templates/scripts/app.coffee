@@ -1,7 +1,6 @@
 <%= _.classify(appname) %> = window.<%= _.classify(appname) %> = Ember.Application.create()
-
-# Ember-simple-auth [this example is just for playing around with simple-auth while locally testing your app
-# login with kfi124 password 1234 in order to authenticate
+<%= _.classify(appname) %>.reopen s3_url: (key) ->
+  "https://<%= appname %>.s3.amazonaws.com/" + key
 
 # Can extend later in order to make protected routes
 <%= _.classify(appname) %>.ProtectedRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin)
@@ -28,7 +27,7 @@
 
 
 CustomAuthenticator = Ember.SimpleAuth.Authenticators.Base.extend(
-  tokenEndpoint: "/api/token"
+  tokenEndpoint: "/token"
   restore: (data) ->
     new Ember.RSVP.Promise((resolve, reject) ->
       unless Ember.isEmpty(data.token)
@@ -39,27 +38,37 @@ CustomAuthenticator = Ember.SimpleAuth.Authenticators.Base.extend(
     )
 
   authenticate: (credentials) ->
+    tokenEndpoint = @get("tokenEndpoint")
     new Ember.RSVP.Promise((resolve, reject) ->
-      if credentials.username is "kfir124" and credentials.password is "1234"
+      Ember.$.post(tokenEndpoint,
+        username: credentials.username
+        password: credentials.password
+      , ->
+      ).done((data) ->
         Ember.run ->
           Bootstrap.GNM.push "Success", "Logged in", "success"
           resolve
-            token: "this-is-an-example"
+            token: data.token
             username: credentials.username
+            user_level: data.user_level
 
           return
 
-      else
+        return
+      ).fail (err) ->
         Ember.run ->
-          Bootstrap.GNM.push "Error", "Wrong username/password", "danger"
-          reject "Wrong username/password"
+          Bootstrap.GNM.push "Error", err.responseText, "danger"
+          reject err.responseText
           return
+
+        return
 
       return
     )
 )
+
 CustomAuthorizer = Ember.SimpleAuth.Authorizers.Base.extend(authorize: (jqXHR, requestOptions) ->
-  jqXHR.setRequestHeader "Token", @get("session.token")  if @get("session.isAuthenticated") and not Ember.isEmpty(@get("session.token"))
+  jqXHR.setRequestHeader "token", @get("session.token")  if @get("session.isAuthenticated") and not Ember.isEmpty(@get("session.token"))
   return
 )
 Ember.Application.initializer
@@ -76,10 +85,11 @@ Ember.Application.initializer
 #///////////////////////////////////////////////////////////////////////////////////////////////
 
 # Order and include as you please.
-require 'scripts/controllers/*'
-require 'scripts/store'
-require 'scripts/models/*'
-require 'scripts/routes/*'
-require 'scripts/components/*'
-require 'scripts/views/*'
-require 'scripts/router'
+require "scripts/controllers/**/*"
+require "scripts/store"
+require "scripts/models/*"
+require "scripts/routes/**/*"
+require "scripts/components/*"
+require "scripts/views/*"
+require "scripts/router"
+require "scripts/helpers"

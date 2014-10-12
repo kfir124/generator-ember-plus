@@ -1,7 +1,9 @@
 var <%= _.classify(appname) %> = window.<%= _.classify(appname) %> = Ember.Application.create();
-
-// Ember-simple-auth [this example is just for playing around with simple-auth while locally testing your app
-// login with kfi124 password 1234 in order to authenticate
+<%= _.classify(appname) %>.reopen({
+    s3_url: function(key) {
+        return 'https://<%= appname %>.s3.amazonaws.com/' + key;
+    }
+});
 
 // Can extend later in order to make protected routes
 <%= _.classify(appname) %>.ProtectedRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin);
@@ -31,7 +33,7 @@ var <%= _.classify(appname) %> = window.<%= _.classify(appname) %> = Ember.Appli
 });
 
 var CustomAuthenticator = Ember.SimpleAuth.Authenticators.Base.extend({
-    tokenEndpoint: '/api/token',
+    tokenEndpoint: '/token',
 
     restore: function(data) {
         return new Ember.RSVP.Promise(function(resolve, reject) {
@@ -44,22 +46,27 @@ var CustomAuthenticator = Ember.SimpleAuth.Authenticators.Base.extend({
     },
 
     authenticate: function(credentials) {
+        var tokenEndpoint = this.get('tokenEndpoint');
         return new Ember.RSVP.Promise(function(resolve, reject) {
-            if (credentials.username === 'kfir124' && credentials.password === '1234') {
+            Ember.$.post(tokenEndpoint, {username: credentials.username, password: credentials.password}, function() {
+            })  
+            .done(function(data) {
                 Ember.run(function () {
-                    Bootstrap.GNM.push('Success', 'Logged in', 'success');
-                    resolve(
-                        {
-                            token: 'this-is-an-example',
-                            username: credentials.username
-                        });
+                Bootstrap.GNM.push('Success', 'Logged in', 'success');
+                resolve(
+                    {
+                        token: data.token,
+                        username: credentials.username,
+                        user_level: data.user_level
+                    });
                 });
-            } else {
+            })
+            .fail(function(err) {
                 Ember.run(function () {
-                    Bootstrap.GNM.push('Error', 'Wrong username/password', 'danger');
-                    reject('Wrong username/password');
+                    Bootstrap.GNM.push('Error', err.responseText, 'danger');
+                    reject(err.responseText);
                 });
-            }
+            });
         });
     }
 });
@@ -67,7 +74,7 @@ var CustomAuthenticator = Ember.SimpleAuth.Authenticators.Base.extend({
 var CustomAuthorizer = Ember.SimpleAuth.Authorizers.Base.extend({
     authorize: function(jqXHR, requestOptions) {
         if (this.get('session.isAuthenticated') && !Ember.isEmpty(this.get('session.token'))) {
-            jqXHR.setRequestHeader('Token', this.get('session.token'));
+            jqXHR.setRequestHeader('token', this.get('session.token'));
         }
     }
 });
@@ -86,10 +93,11 @@ Ember.Application.initializer({
 
 
 /* Order and include as you please. */
-require('scripts/controllers/*');
+require('scripts/controllers/**/*');
 require('scripts/store');
 require('scripts/models/*');
-require('scripts/routes/*');
+require('scripts/routes/**/*');
 require('scripts/components/*');
 require('scripts/views/*');
 require('scripts/router');
+require('scripts/helpers');
