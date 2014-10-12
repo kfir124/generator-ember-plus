@@ -1,4 +1,8 @@
 ## History
+### 1.2.2 (2014-10-13)
+* Better SCSS helpers
+* Using sass css importer
+
 ### 1.2.1 (2014-10-13)
 * Small gruntfile fix
 * Improve app.js functionality
