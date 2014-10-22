@@ -2,6 +2,7 @@ $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
 $fa-font-path: $icon-font-path;
 
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_theme";
 @import "font-awesome/scss/font-awesome";
 // the css importer doesnt understand sass-path so we need to relative show it the way
 @import "CSS:../bower_components/ember-addons.bs_for_ember/app/styles/components/growl-notifications";
